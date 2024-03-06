@@ -52,5 +52,15 @@ Add a Search Bar and a button with Search Icon on the /Restaurant/List page. We 
 
 ![Search Bar and Search Button][SearchBarAndSearchButton]
 
+### Finding Restaurants by Name
+
+In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service to GetRestaurantsByName(). This method allows for passing in a string parameter that represents the name of the restaurant or the partial name that we're going to match.
+
+* If a user passes an empty name of a null name, we'll return all the restaurants.
+* Add the WHERE operator to the LINQ query.
+	* Check if the parameter is null or empty, or someone has passed in a name (or the starting part of the name of a restaurant).
+
+
+
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
