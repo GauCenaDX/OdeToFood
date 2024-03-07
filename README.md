@@ -60,7 +60,18 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 * Add the WHERE operator to the LINQ query.
 	* Check if the parameter is null or empty, or someone has passed in a name (or the starting part of the name of a restaurant).
 
+### Binding to a Query String
+
+1. Give the input search box a name, "searchTerm".
+2. Add a parameter with the same name "searchTerm" to our OnGet() method.
+3. Modify the OnGet() method to work with our changes.
+
+![Enter 'Sc' as search term][BindingToAQueryString1]
+
+![Return only Scott's Pizza][BindingToAQueryString2]
 
 
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
+[BindingToAQueryString1]: /GitImages/binding-to-a-query-string-1.jpg
+[BindingToAQueryString2]: /GitImages/binding-to-a-query-string-2.jpg
