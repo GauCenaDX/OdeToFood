@@ -70,8 +70,17 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 
 ![Return only Scott's Pizza][BindingToAQueryString2]
 
+### Using Model Binding and Tag Helpers
+
+1. Add a public property named "SearchTerm"
+2. Assign BindProperty attribute to make it both input model and output model
+	* Make sure it works with GET request
+3. Use asp-for tag helper to bind this SearchTerm property with the input search box
+
+![Retained search term][UsingModelBindingAndTagHelper]
 
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
 [BindingToAQueryString1]: /GitImages/binding-to-a-query-string-1.jpg
 [BindingToAQueryString2]: /GitImages/binding-to-a-query-string-2.jpg
+[UsingModelBindingAndTagHelper]: /GitImages/using-model-binding-and-tag-helper.jpg
