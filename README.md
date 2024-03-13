@@ -4,6 +4,22 @@
 Author Git Repository: https://github.com/OdeToCode/OdeToFood <br>
 My Git Repository: https://github.com/GauCenaDX/OdeToFood
 
+<a name="top"></a>
+
+* [Drilling into Data](#drilling-into-data)
+	* [Creating project and adding Razor Page](#creating-project-and-adding-razor-page)
+	* [Injecting and Using Configuration](#injecting-and-using-configuration)
+	* [Creating and working with Models/Entities in a separate project](#creating-and-working-with-models-aka-entities-in-a-separate-project)
+	* [Building a Data Access Service](#building-a-data-access-service)
+	* [Registering a Data Service](#registering-a-data-service)
+	* [Building a Page Model](#building-a-page-model)
+	* [Displaying a Table of Restaurants](#displaying-a-table-of-restaurants)
+* [Working with Models and Model Binding](#working-with-models-and-model-binding)
+	* [Building a Search Form](#building-a-search-form)
+	* [Finding Restaurants by Name](#finding-restaurants-by-name)
+	* [Binding to a Query String](#binding-to-a-query-string)
+	* [Using Model Binding and Tag Helpers](#using-model-binding-and-tag-helpers)
+	* [Building a Detail Page](#building-a-detail-page)
 
 ## Drilling into Data
 
@@ -19,7 +35,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 3. Add a Message property with the value "Hello from appsettings!" to appsettings.json
 4. Display that Message on the Razor Page instead
 
-### Creating and working with Models/Entities in a separate project
+### Creating and working with Models aka Entities in a separate project
 1. Add a new Class Library project name "OdeToFood.Core"
 2. Create a new class named "Restaurants"
 3. Define what information we want to store about a restaurant
@@ -43,6 +59,8 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 
 ### Displaying a Table of Restaurants
 Take the list of restaurants that we prepared in our system and display them in a table.
+
+[Back to top](#top)
 
 ## Working with Models and Model Binding
 
@@ -72,15 +90,29 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 
 ### Using Model Binding and Tag Helpers
 
-1. Add a public property named "SearchTerm"
+1. Add a public property named "SearchTerm".
 2. Assign BindProperty attribute to make it both input model and output model
-	* Make sure it works with GET request
-3. Use asp-for tag helper to bind this SearchTerm property with the input search box
+	* Make sure it works with GET request.
+3. Use asp-for tag helper to bind this SearchTerm property with the input search box.
 
 ![Retained search term][UsingModelBindingAndTagHelper]
+
+### Building a Detail Page
+
+1. Add a Razor Page named "Detail" under Restaurants folder.
+2. Have a pulic property of type Restaurant. Name it "Restaurant".
+3. For now, when receive a GET request, a empty object of Restaurant type will be assigned to this Restaurant property.
+4. Build a simple UI on the Razor Page. This page should show the restaurant's name, the id, the location and the type of cuisine.
+5. Provide a navigation button that will take a user back to the list of all restaurants. Name this button "All Restaurants".
+
+![Empty restaurant detail page][BuildingADetailPage]
+
+
+[Back to top](#top)
 
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
 [BindingToAQueryString1]: /GitImages/binding-to-a-query-string-1.jpg
 [BindingToAQueryString2]: /GitImages/binding-to-a-query-string-2.jpg
 [UsingModelBindingAndTagHelper]: /GitImages/using-model-binding-and-tag-helper.jpg
+[BuildingADetailPage]: /GitImages/building-a-detail-page.jpg

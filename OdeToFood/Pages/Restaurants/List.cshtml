@@ -1,6 +1,7 @@
 ﻿@page
 @model OdeToFood.Pages.Restaurants.ListModel
 @{
+    ViewData["Title"] = "Restaurants";
 }
 
 <h1>Restaurants</h1>
@@ -10,7 +11,7 @@
         <div class="input-group">
             <input type="search" class="form-control" asp-for="SearchTerm"/>
             <span class="input-group-btn">
-                <button class="btn btn-default">
+                <button class="btn btn-secondary">
                     <i class="fas fa-search"></i>
                 </button>
             </span>
