@@ -20,6 +20,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Binding to a Query String](#binding-to-a-query-string)
 	* [Using Model Binding and Tag Helpers](#using-model-binding-and-tag-helpers)
 	* [Building a Detail Page](#building-a-detail-page)
+	* [Linking to the Details](#linking-to-the-details)
 
 ## Drilling into Data
 
@@ -107,6 +108,16 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 
 ![Empty restaurant detail page][BuildingADetailPage]
 
+### Linking to the Details
+
+1. Update OnGet() method in the Detail page to allow passing in a restaurant ID.
+2. On the List page, we want to add another table cell to the right side of the table, and inside of the cell we're going to add an action that will allow us to get to the Detail page.
+	* Use asp-for tag helper to redirect user to the Detail page,
+	* Use asp-route tag helper to pass paremeter between pages.
+
+![Added Zoom-in icon][LinkingToTheDetails1]
+
+![Detail page shows restaurant ID][LinkingToTheDetails2]
 
 [Back to top](#top)
 
@@ -116,3 +127,5 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 [BindingToAQueryString2]: /GitImages/binding-to-a-query-string-2.jpg
 [UsingModelBindingAndTagHelper]: /GitImages/using-model-binding-and-tag-helper.jpg
 [BuildingADetailPage]: /GitImages/building-a-detail-page.jpg
+[LinkingToTheDetails1]: /GitImages/linking-to-the-details-1.jpg
+[LinkingToTheDetails2]: /GitImages/linking-to-the-details-2.jpg
