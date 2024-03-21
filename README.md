@@ -21,6 +21,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Using Model Binding and Tag Helpers](#using-model-binding-and-tag-helpers)
 	* [Building a Detail Page](#building-a-detail-page)
 	* [Linking to the Details](#linking-to-the-details)
+	* [Specifying Page Route](#specifying-page-route)
 
 ## Drilling into Data
 
@@ -119,6 +120,12 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 
 ![Detail page shows restaurant ID][LinkingToTheDetails2]
 
+### Specifying Page Route
+
+Use @page directive to make restaurant Id as part of the URL path to reach Detail page.
+
+![Using URL Path format][SpecifyingPageRoute]
+
 [Back to top](#top)
 
 
@@ -129,3 +136,4 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 [BuildingADetailPage]: /GitImages/building-a-detail-page.jpg
 [LinkingToTheDetails1]: /GitImages/linking-to-the-details-1.jpg
 [LinkingToTheDetails2]: /GitImages/linking-to-the-details-2.jpg
+[SpecifyingPageRoute]: /GitImages/specifying-page-route.jpg
