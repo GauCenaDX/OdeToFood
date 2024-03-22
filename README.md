@@ -22,6 +22,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Building a Detail Page](#building-a-detail-page)
 	* [Linking to the Details](#linking-to-the-details)
 	* [Specifying Page Route](#specifying-page-route)
+	* [Fetching Restaurant by Id](#fetching-restaurant-by-id)
 
 ## Drilling into Data
 
@@ -126,8 +127,18 @@ Use @page directive to make restaurant Id as part of the URL path to reach Detai
 
 ![Using URL Path format][SpecifyingPageRoute]
 
-[Back to top](#top)
+### Fetching Restaurant by Id
 
+IRestaurantDate should provide a method to return a restaurant object when providing an id.
+
+![Get to Detail Page from List][FetchingRestaurantById1]
+![Display Restaurant Object by Id][FetchingRestaurantById2]
+
+A null object exception will be thrown if user put in an invalid id on the URL path.
+
+![Exception Thrown for Invalid Id][FetchingRestaurantById3]
+
+[Back to top](#top)
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
 [BindingToAQueryString1]: /GitImages/binding-to-a-query-string-1.jpg
@@ -137,3 +148,6 @@ Use @page directive to make restaurant Id as part of the URL path to reach Detai
 [LinkingToTheDetails1]: /GitImages/linking-to-the-details-1.jpg
 [LinkingToTheDetails2]: /GitImages/linking-to-the-details-2.jpg
 [SpecifyingPageRoute]: /GitImages/specifying-page-route.jpg
+[FetchingRestaurantById1]: /GitImages/fetching-restaurant-by-id-1.png
+[FetchingRestaurantById2]: /GitImages/fetching-restaurant-by-id-2.png
+[FetchingRestaurantById3]: /GitImages/fetching-restaurant-by-id-3.png
