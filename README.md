@@ -23,6 +23,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Linking to the Details](#linking-to-the-details)
 	* [Specifying Page Route](#specifying-page-route)
 	* [Fetching Restaurant by Id](#fetching-restaurant-by-id)
+	* [Handling Bad Requests](#handling-bad-requests)
 
 ## Drilling into Data
 
@@ -32,17 +33,23 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
    * /Restaurants/List
 3. Add the Razor page List.cshtml and check if the page works
 
+---
+
 ### Injecting and Using Configuration
 1. Add a Message property with value "Hello World!" in the List Page Model
 2. Display that Message on the Razor Page
 3. Add a Message property with the value "Hello from appsettings!" to appsettings.json
 4. Display that Message on the Razor Page instead
 
+---
+
 ### Creating and working with Models aka Entities in a separate project
 1. Add a new Class Library project name "OdeToFood.Core"
 2. Create a new class named "Restaurants"
 3. Define what information we want to store about a restaurant
    * Id, Name, Location, CuisineType
+
+---
 
 ### Building a Data Access Service
 1. Add another Class Library project to the solution called "OdeToFood.Data"
@@ -52,18 +59,24 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
    * Create a list of restaurants, make up 3 restaurant objects and add them to this list
    * In the GetAll() method, use LINQ query to select every restaurant and order them by name
 
+---
+
 ### Registering a Data Service
 1. Tell the framework that whenever a component like a Razor Page needs something that implements IRestaurantData, it should provide that component with InMemoryRestaurantData (use the Singleton design pattern)
 2. Inject IRestaurantData service to the List Page Model, call it "restaurantData"
+
+---
 
 ### Building a Page Model
 1. In the List Page Model, create a new public property of IEnumerable of Restaurant type called "Restaurants"
 2. Use the provided service IRestaurantData, fetch the restaurants and store them in the public property Restaurants
 
+---
+
 ### Displaying a Table of Restaurants
 Take the list of restaurants that we prepared in our system and display them in a table.
 
-[Back to top](#top)
+[Back to top](#top)<br><br>
 
 ## Working with Models and Model Binding
 
@@ -73,6 +86,8 @@ Add a Search Bar and a button with Search Icon on the /Restaurant/List page. We 
 
 ![Search Bar and Search Button][SearchBarAndSearchButton]
 
+---
+
 ### Finding Restaurants by Name
 
 In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service to GetRestaurantsByName(). This method allows for passing in a string parameter that represents the name of the restaurant or the partial name that we're going to match.
@@ -80,6 +95,8 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 * If a user passes an empty name of a null name, we'll return all the restaurants.
 * Add the WHERE operator to the LINQ query.
 	* Check if the parameter is null or empty, or someone has passed in a name (or the starting part of the name of a restaurant).
+
+---
 
 ### Binding to a Query String
 
@@ -91,6 +108,8 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 
 ![Return only Scott's Pizza][BindingToAQueryString2]
 
+---
+
 ### Using Model Binding and Tag Helpers
 
 1. Add a public property named "SearchTerm".
@@ -99,6 +118,8 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 3. Use asp-for tag helper to bind this SearchTerm property with the input search box.
 
 ![Retained search term][UsingModelBindingAndTagHelper]
+
+---
 
 ### Building a Detail Page
 
@@ -109,6 +130,8 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 5. Provide a navigation button that will take a user back to the list of all restaurants. Name this button "All Restaurants".
 
 ![Empty restaurant detail page][BuildingADetailPage]
+
+---
 
 ### Linking to the Details
 
@@ -121,11 +144,15 @@ In IRestaurantData.cs from OdeToFood.Data project, change GetAll() data service 
 
 ![Detail page shows restaurant ID][LinkingToTheDetails2]
 
+---
+
 ### Specifying Page Route
 
 Use @page directive to make restaurant Id as part of the URL path to reach Detail page.
 
 ![Using URL Path format][SpecifyingPageRoute]
+
+---
 
 ### Fetching Restaurant by Id
 
@@ -138,7 +165,16 @@ A null object exception will be thrown if user put in an invalid id on the URL p
 
 ![Exception Thrown for Invalid Id][FetchingRestaurantById3]
 
-[Back to top](#top)
+---
+
+### Handling Bad Requests
+
+Redirect user to NotFound page by make use of IActionResult return type and RedirectToPage() helper method.
+
+![Redirect to NotFound page][HandlingBadRequests]
+
+
+[Back to top](#top)<br><br>
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
 [BindingToAQueryString1]: /GitImages/binding-to-a-query-string-1.jpg
@@ -151,3 +187,4 @@ A null object exception will be thrown if user put in an invalid id on the URL p
 [FetchingRestaurantById1]: /GitImages/fetching-restaurant-by-id-1.png
 [FetchingRestaurantById2]: /GitImages/fetching-restaurant-by-id-2.png
 [FetchingRestaurantById3]: /GitImages/fetching-restaurant-by-id-3.png
+[HandlingBadRequests]: /GitImages/handling-bad-requests.png
