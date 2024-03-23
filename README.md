@@ -24,6 +24,9 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Specifying Page Route](#specifying-page-route)
 	* [Fetching Restaurant by Id](#fetching-restaurant-by-id)
 	* [Handling Bad Requests](#handling-bad-requests)
+* [Editing Data with Razor Pages](#editing-data-with-razor-pages)
+	* [Creating the Restaurant Edit Page](#creating-the-restaurant-edit-page)
+
 
 ## Drilling into Data
 
@@ -169,12 +172,24 @@ A null object exception will be thrown if user put in an invalid id on the URL p
 
 ### Handling Bad Requests
 
-Redirect user to NotFound page by make use of IActionResult return type and RedirectToPage() helper method.
+When user provid an invalid restaurant ID, redirect user to NotFound page by make use of IActionResult return type and RedirectToPage() helper method.
 
 ![Redirect to NotFound page][HandlingBadRequests]
 
+[Back to top](#top)<br><br>
+
+## Editing Data with Razor Pages
+
+### Creating the Restaurant Edit Page
+
+Add a link on the List page to allow user to get to the Edit page.
+
+![Edit Button on List Page][CreatingRestaurantEditPage1]
+![Edit Page][CreatingRestaurantEditPage2]
 
 [Back to top](#top)<br><br>
+
+
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
 [BindingToAQueryString1]: /GitImages/binding-to-a-query-string-1.jpg
@@ -188,3 +203,6 @@ Redirect user to NotFound page by make use of IActionResult return type and Redi
 [FetchingRestaurantById2]: /GitImages/fetching-restaurant-by-id-2.png
 [FetchingRestaurantById3]: /GitImages/fetching-restaurant-by-id-3.png
 [HandlingBadRequests]: /GitImages/handling-bad-requests.png
+[CreatingRestaurantEditPage1]: /GitImages/creating-the-restaurant-edit-page-1.png
+[CreatingRestaurantEditPage2]: /GitImages/creating-the-restaurant-edit-page-2.png
+
