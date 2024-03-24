@@ -187,6 +187,17 @@ Add a link on the List page to allow user to get to the Edit page.
 ![Edit Button on List Page][CreatingRestaurantEditPage1]
 ![Edit Page][CreatingRestaurantEditPage2]
 
+### Building an Edit Form with Tag Helpers
+
+Build an Edit form to allow user to edit the restaurant name, location and cuisine type. We also want to include the Id of the restaurant as a form value because we want the form to include all the information that we need to put together to update a restaurant. However, we don't want the user to edit the Id.
+
+Tips:
+
+* Make us of hidden input type, asp-for, asp-items
+* Use GetEnumSelectList() to create a collection of SelectListItem
+
+![Edit Form][BuildingEditFormWithTagHelpers]
+
 [Back to top](#top)<br><br>
 
 
@@ -205,4 +216,5 @@ Add a link on the List page to allow user to get to the Edit page.
 [HandlingBadRequests]: /GitImages/handling-bad-requests.png
 [CreatingRestaurantEditPage1]: /GitImages/creating-the-restaurant-edit-page-1.png
 [CreatingRestaurantEditPage2]: /GitImages/creating-the-restaurant-edit-page-2.png
+[BuildingEditFormWithTagHelpers]: /GitImages/building-edit-form-with-tag-helpers.png
 
