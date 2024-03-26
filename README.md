@@ -28,6 +28,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Creating the Restaurant Edit Page](#creating-the-restaurant-edit-page)
 	* [Building an Edit Form with Tag Helpers](#building-an-edit-form-with-tag-helpers)
 	* [Model Binding an HTTP POST Operation](#model-binding-an-http-post-operation)
+	* [Adding Validation Checks](#adding-validation-checks)
 
 ## Drilling into Data
 
@@ -207,7 +208,17 @@ Tips:
 
 When user click on the Save button, the restaurant with the associated id will be updated with the new input from the form.
 
-![Save updated restaurant info][ModelBindingHttpPost]
+![Modify restaurant info][ModelBindingHttpPost1]
+
+![Save updated restaurant info][ModelBindingHttpPost2]
+
+---
+
+### Adding Validation Checks
+
+* Fix the issue where we lose our list of cuisines when editing a restaurant.
+* Enforce validation check for restaurant name and location.
+
 
 [Back to top](#top)<br><br>
 
@@ -228,5 +239,6 @@ When user click on the Save button, the restaurant with the associated id will b
 [CreatingRestaurantEditPage1]: /GitImages/creating-the-restaurant-edit-page-1.png
 [CreatingRestaurantEditPage2]: /GitImages/creating-the-restaurant-edit-page-2.png
 [BuildingEditFormWithTagHelpers]: /GitImages/building-edit-form-with-tag-helpers.png
-[ModelBindingHttpPost]: /GitImages/model-binding-http-post.png
+[ModelBindingHttpPost1]: /GitImages/model-binding-http-post-1.png
+[ModelBindingHttpPost2]: /GitImages/model-binding-http-post-2.png
 
