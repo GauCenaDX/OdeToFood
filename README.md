@@ -29,6 +29,8 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Building an Edit Form with Tag Helpers](#building-an-edit-form-with-tag-helpers)
 	* [Model Binding an HTTP POST Operation](#model-binding-an-http-post-operation)
 	* [Adding Validation Checks](#adding-validation-checks)
+	* [Using Model State and Showing Validation Errors](#using-model-state-and-showing-validation-errors)
+
 
 ## Drilling into Data
 
@@ -219,6 +221,14 @@ When user click on the Save button, the restaurant with the associated id will b
 * Fix the issue where we lose our list of cuisines when editing a restaurant.
 * Enforce validation check for restaurant name and location.
 
+---
+
+### Using Model State and Showing Validation Errors
+
+* Modify the Edit page model to only update data when Model State is valid.
+* Use asp-validation-for tag helper to show validation errors.
+
+![Show Validation Errors for Name and Location][UsingModelStateAndShowingValidationErrors]
 
 [Back to top](#top)<br><br>
 
@@ -241,4 +251,4 @@ When user click on the Save button, the restaurant with the associated id will b
 [BuildingEditFormWithTagHelpers]: /GitImages/building-edit-form-with-tag-helpers.png
 [ModelBindingHttpPost1]: /GitImages/model-binding-http-post-1.png
 [ModelBindingHttpPost2]: /GitImages/model-binding-http-post-2.png
-
+[UsingModelStateAndShowingValidationErrors]: /GitImages/using-model-state-and-showing-validation-errors.png
