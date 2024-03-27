@@ -30,7 +30,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Model Binding an HTTP POST Operation](#model-binding-an-http-post-operation)
 	* [Adding Validation Checks](#adding-validation-checks)
 	* [Using Model State and Showing Validation Errors](#using-model-state-and-showing-validation-errors)
-
+	* [Following Post Redirect Get Pattern](#following-post-redirect-get-pattern)
 
 ## Drilling into Data
 
@@ -230,6 +230,18 @@ When user click on the Save button, the restaurant with the associated id will b
 
 ![Show Validation Errors for Name and Location][UsingModelStateAndShowingValidationErrors]
 
+---
+
+### Following Post Redirect Get Pattern
+
+Leaving the user on a page with Http Post operation is dangerous, because they can refresh the page and another Post opertion will be performed.
+
+So using the Post/Redirect/Get pattern, when user edits restaurant information and clicks 'Save', let's redirect them to the Detail page so they can see their changes.
+
+![User edits restaurant information][FollowPostRedirectGetPattern1]
+
+![Redirect user to Detail page][FollowPostRedirectGetPattern2]
+
 [Back to top](#top)<br><br>
 
 
@@ -252,3 +264,5 @@ When user click on the Save button, the restaurant with the associated id will b
 [ModelBindingHttpPost1]: /GitImages/model-binding-http-post-1.png
 [ModelBindingHttpPost2]: /GitImages/model-binding-http-post-2.png
 [UsingModelStateAndShowingValidationErrors]: /GitImages/using-model-state-and-showing-validation-errors.png
+[FollowPostRedirectGetPattern1]: /GitImages/follow-post-redirect-get-pattern-1.png
+[FollowPostRedirectGetPattern2]: /GitImages/follow-post-redirect-get-pattern-2.png
