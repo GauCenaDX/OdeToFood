@@ -31,6 +31,8 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Adding Validation Checks](#adding-validation-checks)
 	* [Using Model State and Showing Validation Errors](#using-model-state-and-showing-validation-errors)
 	* [Following Post Redirect Get Pattern](#following-post-redirect-get-pattern)
+	* [Building a Create Restaurant Page](#building-a-create-restaurant-page)
+
 
 ## Drilling into Data
 
@@ -242,6 +244,19 @@ So using the Post/Redirect/Get pattern, when user edits restaurant information a
 
 ![Redirect user to Detail page][FollowPostRedirectGetPattern2]
 
+---
+
+### Building a Create Restaurant Page
+
+A lot of our markup and some of our logic are duplicated between edit and create. They're trying to do the same job just from a different starting point. We will use the Edit page to both create a new restaurant, as well as edit an existing restaurant.
+
+Add a button called 'Add New Restaurant' on the restaurant List page. This button will redirect user to the Editing page.
+
+![Add New Restaurant button on List page][BuildACreateRestaurantPage1]
+
+![Redirect to Edit page when user create new restaurant][BuildACreateRestaurantPage2]
+
+
 [Back to top](#top)<br><br>
 
 
@@ -266,3 +281,5 @@ So using the Post/Redirect/Get pattern, when user edits restaurant information a
 [UsingModelStateAndShowingValidationErrors]: /GitImages/using-model-state-and-showing-validation-errors.png
 [FollowPostRedirectGetPattern1]: /GitImages/follow-post-redirect-get-pattern-1.png
 [FollowPostRedirectGetPattern2]: /GitImages/follow-post-redirect-get-pattern-2.png
+[BuildACreateRestaurantPage1]: /GitImages/build-a-create-restaurant-page-1.png
+[BuildACreateRestaurantPage2]: /GitImages/build-a-create-restaurant-page-2.png

@@ -20,10 +20,18 @@ namespace OdeToFood.Pages.Restaurants
             this.htmlHelper = htmlHelper;
         }
 
-        public IActionResult OnGet(int restaurantId)
+        public IActionResult OnGet(int? restaurantId)
         {
-            Restaurant = restaurantData.GetById(restaurantId);
             Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
+
+            if (restaurantId.HasValue)
+            {
+                Restaurant = restaurantData.GetById(restaurantId.Value);
+            }
+            else
+            {
+                Restaurant = new Restaurant();
+            }
 
             if (Restaurant == null)
             {
