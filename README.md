@@ -32,7 +32,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Using Model State and Showing Validation Errors](#using-model-state-and-showing-validation-errors)
 	* [Following Post Redirect Get Pattern](#following-post-redirect-get-pattern)
 	* [Building a Create Restaurant Page](#building-a-create-restaurant-page)
-
+	* [Adding Create to the Data Access Service](#adding-create-to-the-data-access-service)
 
 ## Drilling into Data
 
@@ -256,9 +256,16 @@ Add a button called 'Add New Restaurant' on the restaurant List page. This butto
 
 ![Redirect to Edit page when user create new restaurant][BuildACreateRestaurantPage2]
 
+---
+
+### Adding Create to the Data Access Service
+
+In our data source (OdeToFood.Data), we should create an Add() method (a service) to add a new Restaurant to our existing restaurant list.
+
+Note: To simulate what a real database would do, we're going to generate an id for the new Restaurant here also.
+
 
 [Back to top](#top)<br><br>
-
 
 
 [SearchBarAndSearchButton]: /GitImages/create-search-form.jpg
