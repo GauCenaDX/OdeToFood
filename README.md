@@ -34,6 +34,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Building a Create Restaurant Page](#building-a-create-restaurant-page)
 	* [Adding Create to the Data Access Service](#adding-create-to-the-data-access-service)
 	* [Handling Create and Update Logic](#handling-create-and-update-logic)
+	* [Confirming the Last Operation](#confirming-the-last-operation)
 
 ## Drilling into Data
 
@@ -278,6 +279,21 @@ A way to tell if we should be updating a restaurant instead of adding a  restaur
 
 ![Newly added Restaurant shown in Restaurant List page][HandlingCreateAndUpdateLogic3]
 
+---
+
+### Confirming the Last Operation
+
+When we commit our restaurant changes and redirect user to the Detail page, we like the Detail page to show some sort of message like 'Restaurant saved."
+
+So how can we pass along information from this Edit page to the Detail page when the Detail page is made using a separate http request?
+
+Use the TempData data structure and Model Binding to accomplish this task.
+
+![Edit a Restaurant][ConfirmingTheLastOperation1]
+
+![Confirmed Message is displayed on Detail page][ConfirmingTheLastOperation2]
+
+
 [Back to top](#top)<br><br>
 
 
@@ -306,3 +322,5 @@ A way to tell if we should be updating a restaurant instead of adding a  restaur
 [HandlingCreateAndUpdateLogic1]: /GitImages/handling-create-and-update-logic-1.png
 [HandlingCreateAndUpdateLogic2]: /GitImages/handling-create-and-update-logic-2.png
 [HandlingCreateAndUpdateLogic3]: /GitImages/handling-create-and-update-logic-3.png
+[ConfirmingTheLastOperation1]: /GitImages/confirming-the-last-operation-1.jpg
+[ConfirmingTheLastOperation2]: /GitImages/confirming-the-last-operation-2.jpg
