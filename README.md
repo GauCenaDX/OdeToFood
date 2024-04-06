@@ -35,6 +35,8 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Adding Create to the Data Access Service](#adding-create-to-the-data-access-service)
 	* [Handling Create and Update Logic](#handling-create-and-update-logic)
 	* [Confirming the Last Operation](#confirming-the-last-operation)
+* [Working with SQL Server and the Entity Framework Core](#working-with-sql-server-and-the-entity-framework-core)
+	* [Installing the Entity Framework](#installing-the-entity-framework)
 
 ## Drilling into Data
 
@@ -293,6 +295,20 @@ Use the TempData data structure and Model Binding to accomplish this task.
 
 ![Confirmed Message is displayed on Detail page][ConfirmingTheLastOperation2]
 
+[Back to top](#top)<br><br>
+
+## Working with SQL Server and the Entity Framework Core
+
+### Installing the Entity Framework
+
+Install 3 NuGet Entity Framework packages for OdeToFood.Data project:
+1. Microsoft.EntityFrameworkCore
+2. Microsoft.EntityFrameworkCore.SqlServer
+3. Microsoft.EntityFrameworkCore.Design
+
+Note 1: Choose the latest stable version that compatible with your project. For example, I installed 6.0.28 version for .NET 6.0.
+
+Note 2: Check OdeToFood project's Dependencies to see if the Microsoft.AspNetCore.App NuGet package is installed. It is a metapackage that included all Entity Framework package. If you don't have it already installed, then you may need to install the same Enity Framework packages mentioned above in OdeToFood project as well.
 
 [Back to top](#top)<br><br>
 
