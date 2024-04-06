@@ -33,6 +33,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Following Post Redirect Get Pattern](#following-post-redirect-get-pattern)
 	* [Building a Create Restaurant Page](#building-a-create-restaurant-page)
 	* [Adding Create to the Data Access Service](#adding-create-to-the-data-access-service)
+	* [Handling Create and Update Logic](#handling-create-and-update-logic)
 
 ## Drilling into Data
 
@@ -265,6 +266,18 @@ In our data source (OdeToFood.Data), we should create an Add() method (a service
 Note: To simulate what a real database would do, we're going to generate an id for the new Restaurant here also.
 
 
+---
+
+### Handling Create and Update Logic
+
+A way to tell if we should be updating a restaurant instead of adding a  restaurant is to look at the restaurant Id property. If the restaurant Id is 0, assuming our database will never use an Id value of 0, we could say any restaurant with an Id value less than 1 or equal to 0 must be a new restaurant that we need to add to the data source. Otherwise, if the restaurant has an Id that is greater than 0, then we need to update an existing restaurant.
+
+![Enter new Restaurant information][HandlingCreateAndUpdateLogic1]
+
+![Show newly added Restaurant on Detail page][HandlingCreateAndUpdateLogic2]
+
+![Newly added Restaurant shown in Restaurant List page][HandlingCreateAndUpdateLogic3]
+
 [Back to top](#top)<br><br>
 
 
@@ -290,3 +303,6 @@ Note: To simulate what a real database would do, we're going to generate an id f
 [FollowPostRedirectGetPattern2]: /GitImages/follow-post-redirect-get-pattern-2.png
 [BuildACreateRestaurantPage1]: /GitImages/build-a-create-restaurant-page-1.png
 [BuildACreateRestaurantPage2]: /GitImages/build-a-create-restaurant-page-2.png
+[HandlingCreateAndUpdateLogic1]: /GitImages/handling-create-and-update-logic-1.png
+[HandlingCreateAndUpdateLogic2]: /GitImages/handling-create-and-update-logic-2.png
+[HandlingCreateAndUpdateLogic3]: /GitImages/handling-create-and-update-logic-3.png
