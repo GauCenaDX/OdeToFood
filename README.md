@@ -37,6 +37,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Confirming the Last Operation](#confirming-the-last-operation)
 * [Working with SQL Server and the Entity Framework Core](#working-with-sql-server-and-the-entity-framework-core)
 	* [Installing the Entity Framework](#installing-the-entity-framework)
+	* [Implementing an Entity Framework DbContext](#implementing-an-entity-framework-dbcontext)
 
 ## Drilling into Data
 
@@ -309,6 +310,13 @@ Install 3 NuGet Entity Framework packages for OdeToFood.Data project:
 Note 1: Choose the latest stable version that compatible with your project. For example, I installed 6.0.28 version for .NET 6.0.
 
 Note 2: Check OdeToFood project's Dependencies to see if the Microsoft.AspNetCore.App NuGet package is installed. It is a metapackage that included all Entity Framework package. If you don't have it already installed, then you may need to install the same Enity Framework packages mentioned above in OdeToFood project as well.
+
+### Implementing an Entity Framework DbContext
+
+We know we want to store restaurant information, so let's go into the OdeToFood.Data project and add a new class called OdeToFoodDbContext. This class should inherit from an Entity Framework class named DbContext.
+
+Add a public property of type DbSet of Restaurant since that is what we'd like to store in the database. This property will be called Restaurants.
+
 
 [Back to top](#top)<br><br>
 
