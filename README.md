@@ -38,6 +38,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 * [Working with SQL Server and the Entity Framework Core](#working-with-sql-server-and-the-entity-framework-core)
 	* [Installing the Entity Framework](#installing-the-entity-framework)
 	* [Implementing an Entity Framework DbContext](#implementing-an-entity-framework-dbcontext)
+	* [Using the Entity Framework Tools](#using-the-entity-framework-tools)
 
 ## Drilling into Data
 
@@ -316,6 +317,26 @@ Note 2: Check OdeToFood project's Dependencies to see if the Microsoft.AspNetCor
 We know we want to store restaurant information, so let's go into the OdeToFood.Data project and add a new class called OdeToFoodDbContext. This class should inherit from an Entity Framework class named DbContext.
 
 Add a public property of type DbSet of Restaurant since that is what we'd like to store in the database. This property will be called Restaurants.
+
+### Using the Entity Framework Tools
+
+The Entity Framework can change the schema of the database so that this database can store all information available for a restaurant. This is a feature of the Entity Framework known as **migrations**.
+
+In order to create a migration, we need to use the dotnet commandline interface. However, the **dotnet ef** tools is no longer part of the .NET Core SDK. So we have to install it separatedly.
+
+For .NET 6 projetct, run:
+
+> <samp>dotnet tool install --globaldotnet-ef --version 6.*</samp>
+
+Then we can use "dotnet-ef" command for the Entity Framework (EF) Core command-line tool.
+
+Change directory to **OdeToFood.Data** project and run these commands for information about our DBContext (OdeToFoodDbContext):
+
+> <samp>dotnet-ef dbcontext</samp>
+
+> <samp>dotnet-ef dbcontext list</samp>
+
+> <samp>dotnet-ef dbcontext info</samp>
 
 
 [Back to top](#top)<br><br>
