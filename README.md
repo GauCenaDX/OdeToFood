@@ -40,6 +40,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Implementing an Entity Framework DbContext](#implementing-an-entity-framework-dbcontext)
 	* [Using the Entity Framework Tools](#using-the-entity-framework-tools)
 	* [Adding Connection Strings and Registering Services](#adding-connection-strings-and-registering-services)
+	* [Adding Database Migrations](#adding-database-migrations)
 
 ## Drilling into Data
 
@@ -346,6 +347,18 @@ Change directory to **OdeToFood.Data** project and run these commands for inform
 1. Adding **Connection String** to appsettings.json
 2. Add **OdeToFoodDbContext service** to Program.cs using AddDbContextPool<> method from Entity Framework.
 3. In OdeToFoodDbContext.cs, we need to provide a **constructor** so that the framework can pass in the connection string and the other options that this DbContext needs to know about to work with the database.
+
+### Adding Database Migrations
+
+Use dotnet-ef tool to:
+
+1. Check information about the OdeToFoodDbContext
+
+	> <samp>dotnet-ef dbcontext info -s \<startupProject\></samp>
+
+2. Execute our first migration to create the database and Restaurants table
+
+	> <samp>dotnet-ef migrations add \<migrationName\> -s \<startupProject\></samp>
 
 [Back to top](#top)<br><br>
 
