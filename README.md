@@ -41,6 +41,8 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Using the Entity Framework Tools](#using-the-entity-framework-tools)
 	* [Adding Connection Strings and Registering Services](#adding-connection-strings-and-registering-services)
 	* [Adding Database Migrations](#adding-database-migrations)
+	* [Running Database Migrations](#running-database-migrations)
+	* [Implementing a Data Access Service](#implementing-a-data-access-service)
 
 ## Drilling into Data
 
@@ -386,6 +388,12 @@ Under OdeToFood.Data project, we use dotnet-ef tool to create the OdeToFood data
 OdeToFood database is created in MSSQLLocalDB:
 
 ![OdeToFood database is created in MSSQLLocalDB][RunningDatabaseMigrations]
+
+### Implementing a Data Access Service
+
+1. Add a Delete method in IRestaurantData interface.
+2. Move the implementation code of InMemoryRestaurantData to a separated file.
+3. Implement the Delete operation in InMemoryRestaurantData class.
 
 [Back to top](#top)<br><br>
 
