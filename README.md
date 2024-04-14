@@ -39,6 +39,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Installing the Entity Framework](#installing-the-entity-framework)
 	* [Implementing an Entity Framework DbContext](#implementing-an-entity-framework-dbcontext)
 	* [Using the Entity Framework Tools](#using-the-entity-framework-tools)
+	* [Adding Connection Strings and Registering Services](#adding-connection-strings-and-registering-services)
 
 ## Drilling into Data
 
@@ -330,6 +331,8 @@ For .NET 6 projetct, run:
 
 Then we can use "dotnet-ef" command for the Entity Framework (EF) Core command-line tool.
 
+	Credit to: https://stackoverflow.com/questions/57066856/command-dotnet-ef-not-found
+
 Change directory to **OdeToFood.Data** project and run these commands for information about our DBContext (OdeToFoodDbContext):
 
 > <samp>dotnet-ef dbcontext</samp>
@@ -338,6 +341,11 @@ Change directory to **OdeToFood.Data** project and run these commands for inform
 
 > <samp>dotnet-ef dbcontext info</samp>
 
+### Adding Connection Strings and Registering Services
+
+1. Adding **Connection String** to appsettings.json
+2. Add **OdeToFoodDbContext service** to Program.cs using AddDbContextPool<> method from Entity Framework.
+3. In OdeToFoodDbContext.cs, we need to provide a **constructor** so that the framework can pass in the connection string and the other options that this DbContext needs to know about to work with the database.
 
 [Back to top](#top)<br><br>
 
