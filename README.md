@@ -348,17 +348,44 @@ Change directory to **OdeToFood.Data** project and run these commands for inform
 2. Add **OdeToFoodDbContext service** to Program.cs using AddDbContextPool<> method from Entity Framework.
 3. In OdeToFoodDbContext.cs, we need to provide a **constructor** so that the framework can pass in the connection string and the other options that this DbContext needs to know about to work with the database.
 
+Please note: In this commit, there was some typos in the OdeToFoodDB connection string in appsettings.json
+
+Typos:
+
+* M**S**SQLLocalDB, not MSQLLocalDB
+* Init**i**al Catalog, not Inital Catalog
+
+Fix:
+
+> <samp>"OdeToFoodDb": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=OdeToFood;Integrated Security=True"</samp>
+
 ### Adding Database Migrations
 
-Use dotnet-ef tool to:
+Under OdeToFood.Data project, we use dotnet-ef tool to:
 
 1. Check information about the OdeToFoodDbContext
 
 	> <samp>dotnet-ef dbcontext info -s \<startupProject\></samp>
 
-2. Execute our first migration to create the database and Restaurants table
+	> <samp>dotnet-ef dbcontext info -s ..\OdeToFood\OdeToFood.csproj</samp>
+
+2. Create our first migration to generate code for creating the OdeToFood database and the Restaurants table
 
 	> <samp>dotnet-ef migrations add \<migrationName\> -s \<startupProject\></samp>
+
+	> <samp>dotnet-ef migrations add initialcreate -s ../OdeToFood/OdeToFood.csproj</samp>
+
+### Running Database Migrations
+
+Under OdeToFood.Data project, we use dotnet-ef tool to create the OdeToFood database and the Restaurants table:
+
+> <samp>dotnet-ef database update -s \<startupProject\></samp>
+
+> <samp>dotnet-ef database update -s ..\OdeToFood\OdeToFood.csproj</samp>
+
+OdeToFood database is created in MSSQLLocalDB:
+
+![OdeToFood database is created in MSSQLLocalDB][RunningDatabaseMigrations]
 
 [Back to top](#top)<br><br>
 
@@ -390,3 +417,4 @@ Use dotnet-ef tool to:
 [HandlingCreateAndUpdateLogic3]: /GitImages/handling-create-and-update-logic-3.png
 [ConfirmingTheLastOperation1]: /GitImages/confirming-the-last-operation-1.jpg
 [ConfirmingTheLastOperation2]: /GitImages/confirming-the-last-operation-2.jpg
+[RunningDatabaseMigrations]: /GitImages/running-database-migrations.png
