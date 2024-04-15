@@ -43,6 +43,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Adding Database Migrations](#adding-database-migrations)
 	* [Running Database Migrations](#running-database-migrations)
 	* [Implementing a Data Access Service](#implementing-a-data-access-service)
+	* [Saving and Committing Data](#saving-and-committing-data)
 
 ## Drilling into Data
 
@@ -394,6 +395,10 @@ OdeToFood database is created in MSSQLLocalDB:
 1. Add a Delete method in IRestaurantData interface.
 2. Move the implementation code of InMemoryRestaurantData to a separated file.
 3. Implement the Delete operation in InMemoryRestaurantData class.
+
+### Saving and Committing Data
+
+Create a SqlRestaurantData class which implement the IRestaurantData interface using our OdeToFoodDbContext service.
 
 [Back to top](#top)<br><br>
 
