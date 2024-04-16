@@ -44,6 +44,7 @@ My Git Repository: https://github.com/GauCenaDX/OdeToFood
 	* [Running Database Migrations](#running-database-migrations)
 	* [Implementing a Data Access Service](#implementing-a-data-access-service)
 	* [Saving and Committing Data](#saving-and-committing-data)
+	* [Modifying the Service Registration](#modifying-the-service-registration)
 
 ## Drilling into Data
 
@@ -400,6 +401,16 @@ OdeToFood database is created in MSSQLLocalDB:
 
 Create a SqlRestaurantData class which implement the IRestaurantData interface using our OdeToFoodDbContext service.
 
+### Modifying the Service Registration
+
+Change the application configure services to use SqlRestaurantData instead of InMemoryRestaurantData. After that, we should be able to add the first restaurant to our database using the application.
+
+![Add Scott's Pizza restaurant][ModifyServiceRegistration1]
+
+Look at the database data to confirm the restaurant data is there:
+
+![Scott's Pizza data in database][ModifyServiceRegistration2]
+
 [Back to top](#top)<br><br>
 
 
@@ -431,3 +442,5 @@ Create a SqlRestaurantData class which implement the IRestaurantData interface u
 [ConfirmingTheLastOperation1]: /GitImages/confirming-the-last-operation-1.jpg
 [ConfirmingTheLastOperation2]: /GitImages/confirming-the-last-operation-2.jpg
 [RunningDatabaseMigrations]: /GitImages/running-database-migrations.png
+[ModifyServiceRegistration1]: /GitImages/modifying-the-service-registration-1.png
+[ModifyServiceRegistration2]: /GitImages/modifying-the-service-registration-2.png

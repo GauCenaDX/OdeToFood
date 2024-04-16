@@ -15,7 +15,7 @@ namespace OdeToFood
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("OdeToFoodDb"));
             });
-            builder.Services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
+            builder.Services.AddScoped<IRestaurantData, SqlRestaurantData>();
 
             var app = builder.Build();
 
